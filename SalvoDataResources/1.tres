@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SalvoData" load_steps=6 format=3 uid="uid://dylhqgn6afhwp"]
+
+[ext_resource type="Script" path="res://Scenes/salvo_data.gd" id="1_psicw"]
+[ext_resource type="Script" path="res://Scenes/bullet_data.gd" id="1_q3veu"]
+
+[sub_resource type="Resource" id="Resource_cv7n2"]
+script = ExtResource("1_q3veu")
+angle = 0.0
+velocity = 10.0
+relative_accel = Vector2(0, 0)
+absolute_accel = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_lgukg"]
+script = ExtResource("1_q3veu")
+angle = -30.0
+velocity = 10.0
+relative_accel = Vector2(0, 0)
+absolute_accel = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_b1rfe"]
+script = ExtResource("1_q3veu")
+angle = 30.0
+velocity = 10.0
+relative_accel = Vector2(0, 0)
+absolute_accel = Vector2(0, 0)
+
+[resource]
+script = ExtResource("1_psicw")
+delay_after_fire = 4.0
+shots = Array[Resource]([SubResource("Resource_cv7n2"), SubResource("Resource_lgukg"), SubResource("Resource_b1rfe")])

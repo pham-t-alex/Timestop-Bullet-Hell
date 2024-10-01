@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxdumyp2eshrx"]
+[gd_scene load_steps=5 format=3 uid="uid://bxdumyp2eshrx"]
+
+[ext_resource type="Script" path="res://Scenes/boss.gd" id="1_hm6y0"]
+[ext_resource type="Script" path="res://Scenes/salvo_data.gd" id="2_kvvu8"]
+[ext_resource type="Resource" uid="uid://dylhqgn6afhwp" path="res://SalvoDataResources/1.tres" id="3_01c3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_foob4"]
 size = Vector2(30, 30)
 
 [node name="Boss" type="CharacterBody2D"]
+script = ExtResource("1_hm6y0")
+action_set = Array[ExtResource("2_kvvu8")]([ExtResource("3_01c3p")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_foob4")
