@@ -27,4 +27,5 @@ absolute_accel = Vector2(0, 0)
 [resource]
 script = ExtResource("1_psicw")
 delay_after_fire = 4.0
+isBulletSalvo = true
 shots = Array[Resource]([SubResource("Resource_cv7n2"), SubResource("Resource_lgukg"), SubResource("Resource_b1rfe")])

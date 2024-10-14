@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://exg7egjmhy1l"]
+[gd_scene load_steps=4 format=3 uid="uid://exg7egjmhy1l"]
 
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_24win"]
 [ext_resource type="PackedScene" uid="uid://m2nflm42k56a" path="res://Scenes/player.tscn" id="1_mqnn7"]
 [ext_resource type="PackedScene" uid="uid://bxdumyp2eshrx" path="res://Scenes/boss.tscn" id="2_owpyi"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_24win")
 
 [node name="Player" parent="." instance=ExtResource("1_mqnn7")]
 position = Vector2(500, 500)
 
 [node name="Boss" parent="." instance=ExtResource("2_owpyi")]
 position = Vector2(547, 93)
+
+[node name="BossBullets" type="Node2D" parent="."]
+
+[connection signal="generate_bullet" from="Boss" to="." method="_on_boss_generate_bullet"]
