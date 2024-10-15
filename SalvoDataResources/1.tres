@@ -6,21 +6,21 @@
 [sub_resource type="Resource" id="Resource_cv7n2"]
 script = ExtResource("1_q3veu")
 angle = 0.0
-velocity = 10.0
+velocity = 100.0
 relative_accel = Vector2(0, 0)
 absolute_accel = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_lgukg"]
 script = ExtResource("1_q3veu")
 angle = -30.0
-velocity = 10.0
+velocity = 100.0
 relative_accel = Vector2(0, 0)
 absolute_accel = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_b1rfe"]
 script = ExtResource("1_q3veu")
 angle = 30.0
-velocity = 10.0
+velocity = 100.0
 relative_accel = Vector2(0, 0)
 absolute_accel = Vector2(0, 0)
 
