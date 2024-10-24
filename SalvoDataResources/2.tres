@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="SalvoData" load_steps=10 format=3 uid="uid://beiyrkef6i8f8"]
+
+[ext_resource type="Script" path="res://Scenes/salvo_data.gd" id="1_eoe6i"]
+[ext_resource type="Script" path="res://Scenes/bullet_data.gd" id="2_wckrk"]
+
+[sub_resource type="Resource" id="Resource_1ob46"]
+script = ExtResource("2_wckrk")
+angle = -60.0
+velocity = 200.0
+relative_accel = Vector2(0, 0)
+absolute_accel = Vector2(50, 0)
+
+[sub_resource type="Resource" id="Resource_upr3c"]
+script = ExtResource("2_wckrk")
+angle = 0.0
+velocity = 200.0
+relative_accel = Vector2(0, 0)
+absolute_accel = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_jym2d"]
+script = ExtResource("2_wckrk")
+angle = 60.0
+velocity = 200.0
+relative_accel = Vector2(0, 0)
+absolute_accel = Vector2(-50, 0)
+
+[sub_resource type="Resource" id="Resource_iaohc"]
+script = ExtResource("1_eoe6i")
+delay_after_fire = 1.0
+shots = Array[Resource]([SubResource("Resource_1ob46"), SubResource("Resource_upr3c"), SubResource("Resource_jym2d")])
+
+[sub_resource type="Resource" id="Resource_ervek"]
+script = ExtResource("2_wckrk")
+angle = -40.0
+velocity = 400.0
+relative_accel = Vector2(0, 400)
+absolute_accel = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_q80h2"]
+script = ExtResource("2_wckrk")
+angle = 40.0
+velocity = 400.0
+relative_accel = Vector2(0, -400)
+absolute_accel = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_h2dky"]
+script = ExtResource("1_eoe6i")
+delay_after_fire = 0.0
+shots = Array[Resource]([SubResource("Resource_ervek"), SubResource("Resource_q80h2")])
+
+[resource]
+script = ExtResource("1_eoe6i")
+delay_after_fire = 4.0
+shots = Array[Resource]([SubResource("Resource_iaohc"), SubResource("Resource_h2dky")])

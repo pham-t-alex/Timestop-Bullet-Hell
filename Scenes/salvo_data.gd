@@ -2,7 +2,6 @@ class_name SalvoData
 extends Resource
 
 @export var delay_after_fire: float
-@export var isBulletSalvo: bool
 # RULE: DO NOT MIX BULLET_DATA AND SALVO_DATA
 @export var shots: Array[Resource]
 
