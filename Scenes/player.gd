@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 500.0
+signal generate_bullet(pos: Vector2)
 
 func _physics_process(delta) -> void:
 	
