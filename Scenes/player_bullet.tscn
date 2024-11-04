@@ -1,18 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfwbryw877v8a"]
+[gd_scene load_steps=4 format=3 uid="uid://8sidel3krcel"]
 
 [ext_resource type="Script" path="res://Scenes/player_bullet.gd" id="1_03d2g"]
-[ext_resource type="Texture2D" uid="uid://bwhiuu3218r88" path="res://icon.png" id="2_dtkf8"]
+[ext_resource type="Texture2D" uid="uid://df76p3jhiypcu" path="res://Sprites/playerbullet.png" id="2_fki4x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m387"]
-size = Vector2(64, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpujx"]
+radius = 5.0
+height = 28.0
 
 [node name="PlayerBullet" type="Area2D"]
 script = ExtResource("1_03d2g")
 damage = 10
-velocity = Vector2(0, -100)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dtkf8")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fki4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_0m387")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lpujx")

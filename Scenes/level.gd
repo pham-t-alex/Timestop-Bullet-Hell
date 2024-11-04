@@ -19,5 +19,10 @@ func _on_boss_generate_bullet(pos: Vector2, data: BulletData) -> void:
 
 func _on_player_generate_bullet(pos: Vector2) -> void:
 	var bullet := PLAYER_BULLET_SCENE.instantiate()
+	var bullet2 := PLAYER_BULLET_SCENE.instantiate()
 	$PlayerBullets.add_child(bullet)
-	bullet.position = pos
+	$PlayerBullets.add_child(bullet2)
+	bullet.position = pos + Vector2(-8, 0)
+	bullet2.position = pos + Vector2(8, 0)
+	bullet.rotate(deg_to_rad(90))
+	bullet2.rotate(deg_to_rad(90))

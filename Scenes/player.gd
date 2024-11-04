@@ -9,3 +9,6 @@ func _physics_process(delta) -> void:
 	velocity = direction * speed
 
 	move_and_slide()
+
+func shoot() -> void:
+	generate_bullet.emit(position)

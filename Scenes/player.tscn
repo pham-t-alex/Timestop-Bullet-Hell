@@ -13,3 +13,9 @@ shape = SubResource("CapsuleShape2D_8nhfl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jsh68")
+
+[node name="FireDelay" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="FireDelay" to="." method="shoot"]
