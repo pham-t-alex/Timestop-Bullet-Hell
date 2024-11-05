@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var action_set: Array[SalvoData]
+@export var action_set: Array[Resource]
 var currently_executing_salvo := false
 
 signal generate_bullet(pos: Vector2, data: BulletData)
@@ -12,7 +12,7 @@ func _ready() -> void:
 func _generate_bullets_from_salvo(salvo: SalvoData, topLevel: bool) -> void:
 	for data in salvo.shots:
 		if data is SalvoData:
-			_generate_bullets_from_salvo(data as SalvoData, false)
+			await _generate_bullets_from_salvo(data as SalvoData, false)
 		else:
 			var bullet_data := data as BulletData
 			generate_bullet.emit(position, bullet_data)
@@ -27,3 +27,10 @@ func take_action() -> void:
 	currently_executing_salvo = true
 	var salvo := action_set[index]
 	_generate_bullets_from_salvo(salvo as SalvoData, true)
+
+func compile_salvos() -> void:
+	for i in range(0, len(action_set)):
+		action_set[i] = compile_recurse(action_set[i])
+
+func compile_recurse(r: Resource) -> SalvoData:
+	return null

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 func _on_boss_generate_bullet(pos: Vector2, data: BulletData) -> void:
 	var bullet := BULLET_SCENE.instantiate()
 	$BossBullets.add_child(bullet)
-	bullet.position = pos
+	bullet.position = pos + data.relative_pos
 	bullet.initialize(0, data.angle, data.velocity, data.relative_accel, data.absolute_accel)
 
 func _on_player_generate_bullet(pos: Vector2) -> void:

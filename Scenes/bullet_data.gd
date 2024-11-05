@@ -1,6 +1,8 @@
 class_name BulletData
 extends Resource
 
+# starting position relative to boss
+@export var relative_pos: Vector2
 # angle represents the angle relative to
 # down direction from boss
 # e.g. angle=90 represents rightward direction
@@ -20,6 +22,7 @@ extends Resource
 @export var absolute_accel: Vector2
 
 func _init():
+	relative_pos = Vector2.ZERO
 	angle = 0
 	velocity = 0
 	relative_accel = Vector2.ZERO
