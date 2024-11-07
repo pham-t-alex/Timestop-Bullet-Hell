@@ -33,4 +33,16 @@ func compile_salvos() -> void:
 		action_set[i] = compile_recurse(action_set[i])
 
 func compile_recurse(r: Resource) -> SalvoData:
+	if (r is SalvoData):
+		return r as SalvoData
+	if (r is AngleSalvo):
+		var a = r as AngleSalvo
+		
+	elif (r is RepeatingSalvo):
+		var repeat = r as RepeatingSalvo
+		var s = SalvoData.new()
+		s.delay_after_fire = repeat.delay_after_iterations
+		for i in range(0, repeat.iterations):
+			for salvo in repeat.salvos:
+				compile_recurse(salvo)
 	return null
