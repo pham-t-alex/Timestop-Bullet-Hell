@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="AngleSalvo" load_steps=5 format=3 uid="uid://dk3cn57lrmdi2"]
+
+[ext_resource type="Script" path="res://Scenes/angle_salvo.gd" id="1_cfj0h"]
+[ext_resource type="Script" path="res://Scenes/bullet_data.gd" id="2_aojct"]
+
+[sub_resource type="Resource" id="Resource_jysnv"]
+script = ExtResource("2_aojct")
+relative_pos = Vector2(0, 0)
+angle = 0.0
+velocity = 200.0
+relative_accel = Vector2(0, 0)
+absolute_accel = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_gsjyi"]
+script = ExtResource("1_cfj0h")
+delay_after_shot = 0.0
+shot = SubResource("Resource_jysnv")
+start_angle = -30.0
+end_angle = 31.0
+step = 30.0
+final_delay = 0.0
+
+[resource]
+script = ExtResource("1_cfj0h")
+delay_after_shot = 0.0
+shot = SubResource("Resource_gsjyi")
+start_angle = -60.0
+end_angle = 61.0
+step = 30.0
+final_delay = 2.0

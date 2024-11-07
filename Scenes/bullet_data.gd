@@ -27,3 +27,12 @@ func _init():
 	velocity = 0
 	relative_accel = Vector2.ZERO
 	absolute_accel = Vector2.ZERO
+
+func copy():
+	var bullet = BulletData.new()
+	bullet.relative_pos = relative_pos
+	bullet.angle = angle
+	bullet.velocity = velocity
+	bullet.relative_accel = relative_accel
+	bullet.absolute_accel = absolute_accel
+	return bullet
