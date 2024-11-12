@@ -31,3 +31,4 @@ absolute_accel = Vector2(0, 0)
 script = ExtResource("1_5ku7q")
 delay_after_fire = 2.0
 shots = Array[Resource]([SubResource("Resource_3lxeh"), SubResource("Resource_fado8"), SubResource("Resource_rd8jd")])
+angle_offset = 0.0

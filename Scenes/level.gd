@@ -15,8 +15,7 @@ func _on_boss_generate_bullet(pos: Vector2, rotation: float, data: BulletData) -
 	var bullet := BULLET_SCENE.instantiate()
 	$BossBullets.add_child(bullet)
 	bullet.position = pos + data.relative_pos
-	bullet.initialize(0, data.angle, data.velocity, data.relative_accel, data.absolute_accel)
-	bullet.rotate(deg_to_rad(rotation))
+	bullet.initialize(0, data.angle + rotation, data.velocity, data.relative_accel, data.absolute_accel)
 
 func _on_player_generate_bullet(pos: Vector2) -> void:
 	var bullet := PLAYER_BULLET_SCENE.instantiate()

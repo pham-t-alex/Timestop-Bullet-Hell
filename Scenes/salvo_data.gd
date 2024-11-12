@@ -15,7 +15,7 @@ func _init():
 func copy():
 	var salvo = SalvoData.new()
 	salvo.delay_after_fire = delay_after_fire
-	salvo.shots = []
 	for shot in shots:
-		salvo.shots.add(shot)
+		salvo.shots.append(shot)
 	salvo.angle_offset = angle_offset
+	return salvo
