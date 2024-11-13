@@ -15,16 +15,16 @@ absolute_accel = Vector2(0, 0)
 script = ExtResource("1_cfj0h")
 delay_after_shot = 0.0
 shot = SubResource("Resource_jysnv")
-start_angle = -30.0
-end_angle = 31.0
-step = 30.0
-final_delay = 0.0
+start_angle = -5.0
+end_angle = 6.0
+step = 5.0
+final_delay = 0.2
 
 [resource]
 script = ExtResource("1_cfj0h")
 delay_after_shot = 0.0
 shot = SubResource("Resource_gsjyi")
-start_angle = -60.0
-end_angle = 61.0
-step = 30.0
-final_delay = 2.0
+start_angle = -80.0
+end_angle = 80.0
+step = 40.0
+final_delay = 0.2

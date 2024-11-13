@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="RepeatingSalvo" load_steps=7 format=3 uid="uid://cmb8x2qc35sun"]
+
+[ext_resource type="Script" path="res://Scenes/angle_salvo.gd" id="1_h8ppk"]
+[ext_resource type="Script" path="res://Scenes/bullet_data.gd" id="2_12wm8"]
+[ext_resource type="Script" path="res://Scenes/repeating_salvo.gd" id="2_jtmwr"]
+
+[sub_resource type="Resource" id="Resource_3lqhb"]
+script = ExtResource("2_12wm8")
+relative_pos = Vector2(0, 0)
+angle = 0.0
+velocity = 400.0
+relative_accel = Vector2(0, 0)
+absolute_accel = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_wu46g"]
+script = ExtResource("1_h8ppk")
+delay_after_shot = 0.0
+shot = SubResource("Resource_3lqhb")
+start_angle = -60.0
+end_angle = 60.0
+step = 15.0
+final_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_yfg1k"]
+script = ExtResource("1_h8ppk")
+delay_after_shot = 0.0
+start_angle = -52.5
+end_angle = 52.5
+step = 15.0
+final_delay = 0.5
+
+[resource]
+script = ExtResource("2_jtmwr")
+iterations = 5
+salvos = Array[Resource]([SubResource("Resource_wu46g"), SubResource("Resource_yfg1k")])
+final_delay = 2.0

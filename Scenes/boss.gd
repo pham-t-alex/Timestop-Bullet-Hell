@@ -17,8 +17,9 @@ func _generate_bullets_from_salvo(salvo: SalvoData, rotation: float, topLevel: b
 		else:
 			var bullet_data := data as BulletData
 			generate_bullet.emit(position, rotation + salvo.angle_offset, bullet_data)
-	$SalvoDelay.start(salvo.delay_after_fire)
-	await $SalvoDelay.timeout
+	if (salvo.delay_after_fire > 0):
+		$SalvoDelay.start(salvo.delay_after_fire)
+		await $SalvoDelay.timeout
 	if topLevel:
 		completed_action.emit()
 
@@ -51,6 +52,7 @@ func compile_recurse(r: Resource) -> SalvoData:
 		else:
 			while (angle <= a.end_angle):
 				var salvo = compile_recurse(shot)
+				salvo.delay_after_fire += a.delay_after_shot
 				salvo.angle_offset += angle
 				s.shots.append(salvo)
 				angle += a.step
@@ -58,7 +60,7 @@ func compile_recurse(r: Resource) -> SalvoData:
 	elif (r is RepeatingSalvo):
 		var repeat = r as RepeatingSalvo
 		var s = SalvoData.new()
-		s.delay_after_fire = repeat.delay_after_iterations
+		s.delay_after_fire = repeat.final_delay
 		var salvos = []
 		for salvo in repeat.salvos:
 			salvos.append(compile_recurse(salvo))

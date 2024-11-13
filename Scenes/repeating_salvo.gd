@@ -2,10 +2,10 @@ class_name RepeatingSalvo
 extends Resource
 
 @export var iterations: int
-@export var salvos: Array[SalvoData]
-@export var delay_after_iterations: float
+@export var salvos: Array[Resource]
+@export var final_delay: float
 
 func _init():
 	iterations = 0
 	salvos = []
-	delay_after_iterations = 0
+	final_delay = 0
