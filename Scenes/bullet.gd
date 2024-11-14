@@ -24,3 +24,6 @@ func _physics_process(delta: float) -> void:
 	position += velocity * delta
 	velocity += relative_accel.rotated(velocity.angle()) * delta
 	velocity += absolute_accel * delta
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
