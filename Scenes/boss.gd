@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var maxHealth: int = 50
+@export var health: int = 50
 @export var action_set: Array[Resource]
 var currently_executing_salvo := false
 
@@ -9,6 +11,11 @@ signal completed_action
 func _ready() -> void:
 	compile_salvos()
 	take_action()
+	
+func take_damage(damage: int) -> void:
+	health = max(0, health - damage)
+	if (health == 0):
+		queue_free()
 
 func _generate_bullets_from_salvo(salvo: SalvoData, rotation: float, topLevel: bool) -> void:
 	for data in salvo.shots:

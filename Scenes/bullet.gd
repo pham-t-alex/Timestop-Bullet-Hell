@@ -26,4 +26,5 @@ func _physics_process(delta: float) -> void:
 	velocity += absolute_accel * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	body.take_damage(1)
+	queue_free()

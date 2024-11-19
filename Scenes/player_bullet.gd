@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	position += velocity * delta
+
+func _on_body_entered(body: Node2D) -> void:
+	body.take_damage(1)
+	queue_free()
