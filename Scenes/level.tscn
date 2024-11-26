@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://exg7egjmhy1l"]
+[gd_scene load_steps=10 format=3 uid="uid://exg7egjmhy1l"]
 
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_24win"]
 [ext_resource type="PackedScene" uid="uid://m2nflm42k56a" path="res://Scenes/player.tscn" id="1_mqnn7"]
 [ext_resource type="PackedScene" uid="uid://bxdumyp2eshrx" path="res://Scenes/boss.tscn" id="2_owpyi"]
 [ext_resource type="Resource" uid="uid://cmb8x2qc35sun" path="res://SalvoDataResources/5.tres" id="4_uktx0"]
+[ext_resource type="Script" path="res://Scenes/interference_handler.gd" id="5_05uem"]
+[ext_resource type="Resource" uid="uid://dylhqgn6afhwp" path="res://SalvoDataResources/1.tres" id="5_7umeq"]
+[ext_resource type="Resource" uid="uid://beiyrkef6i8f8" path="res://SalvoDataResources/2.tres" id="6_ps8pa"]
+[ext_resource type="Resource" uid="uid://cmjyk0u68hl68" path="res://SalvoDataResources/3.tres" id="7_la0al"]
+[ext_resource type="Resource" uid="uid://dk3cn57lrmdi2" path="res://SalvoDataResources/4.tres" id="8_215w0"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_24win")
@@ -13,11 +18,14 @@ position = Vector2(500, 500)
 
 [node name="Boss" parent="." instance=ExtResource("2_owpyi")]
 position = Vector2(547, 93)
-action_set = Array[Resource]([ExtResource("4_uktx0")])
+action_set = Array[Resource]([ExtResource("4_uktx0"), ExtResource("5_7umeq"), ExtResource("6_ps8pa"), ExtResource("7_la0al"), ExtResource("8_215w0")])
 
 [node name="BossBullets" type="Node2D" parent="."]
 
 [node name="PlayerBullets" type="Node2D" parent="."]
+
+[node name="InterferenceHandler" type="Node2D" parent="."]
+script = ExtResource("5_05uem")
 
 [connection signal="generate_bullet" from="Player" to="." method="_on_player_generate_bullet"]
 [connection signal="generate_bullet" from="Boss" to="." method="_on_boss_generate_bullet"]
